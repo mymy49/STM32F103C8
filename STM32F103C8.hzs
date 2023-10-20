@@ -82,7 +82,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="27" useTextEdit="1" path="app/src/main.cpp" left="0" selected="1" top="19" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="64" y="20" useTextEdit="1" path="app/src/bsp.cpp" left="0" top="0" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="71" y="18" useTextEdit="1" path="app/inc/config.h" left="0" top="0" codecName="UTF-8"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="103" useTextEdit="1" path="../../../library/yss/config/config_stm32f103xb.h" left="0" top="82" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="103" useTextEdit="1" path="../../../library/yss/config/config_stm32f103xb.h" left="0" top="46" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../library/yss/inc/targets/st/stm32f103xb.h" left="0" top="0" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="55" y="579" useTextEdit="1" path="../../../library/yss/src/scheduler/yss_scheduler.cpp" left="0" top="561" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="78" y="15" useTextEdit="1" path="app/src/syscalls.c" left="0" top="0" codecName="UTF-8"/>
