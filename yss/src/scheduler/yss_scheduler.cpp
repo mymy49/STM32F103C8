@@ -51,7 +51,7 @@ struct Task
 
 Task gYssThreadList[MAX_THREAD] = 
 {
-	{0, 0, 0, true, true, false, 0, 0, 0}
+	{0, 0, 0, true, true, false, false, 0, 0, 0}
 };
 
 static int32_t gNumOfThread = 1;

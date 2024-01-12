@@ -28,9 +28,9 @@
 
 #include "peripheral.h"
 
-#if defined(GD32F1) || defined(STM32F1)
+#if defined(GD32F1) || defined(STM32F1) || defined(STM32F7)
 
-struct CanFrame
+struct CanFrame_t
 {
 	uint32_t reserved1 : 1;
 	uint32_t remote : 1;
@@ -41,7 +41,7 @@ struct CanFrame
 	uint8_t data[8];
 };
 
-struct J1939Frame
+struct J1939Frame_t
 {
 	uint32_t reserved1 : 1;
 	uint32_t remote : 1;
@@ -154,7 +154,7 @@ class Can : public Drv
 	//		전송에 성공하면 true를 반환한다.
 	// CanFrame packet
 	//		전송할 데이터를 설정한다.
-	error send(CanFrame packet);
+	error send(CanFrame_t packet);
 
 	// 데이터를 전송한다.
 	// 
@@ -162,7 +162,7 @@ class Can : public Drv
 	//		전송에 성공하면 true를 반환한다.
 	// J1939Frame packet
 	//		전송할 데이터를 설정한다.
-	error send(J1939Frame packet);
+	error send(J1939Frame_t packet);
 	
 	// 발생한 전송 에러의 카운트를 얻는다.
 	//
@@ -196,14 +196,14 @@ class Can : public Drv
 	// 
 	// 반환
 	//		수신한 데이터를 얻는다.
-	CanFrame* getRxPacketPointer(void);
+	CanFrame_t* getRxPacketPointer(void);
 
 	// 송신용 J1939Frame 데이터에 기본값 설정을 도와준다.
 	// J1939Frame 데이터의 기본 설정 후에 데이터를 설정하고 전송하는데 사용한다.
 	// 
 	// 반환
 	//		J1939Frame으로 생성한 데이터를 반환한다.
-	J1939Frame generateJ1939Frame(uint8_t priority, uint16_t pgn, uint8_t sa, uint8_t count);
+	J1939Frame_t generateJ1939Frame(uint8_t priority, uint16_t pgn, uint8_t sa, uint8_t count);
 
 	// Error 또는 상태 변화 발생시 호출될 Interrupt Service Routine 함수를 설정한다.
 	//
@@ -226,13 +226,13 @@ class Can : public Drv
 	Can(const Drv::Setup_t drvSetup, const Setup_t setup);
 
 private :
-	CanFrame *mCanFrame;
+	CanFrame_t *mCanFrame;
 	uint32_t mHead, mTail, mRxBufferDepth;
 	YSS_CAN_TypeDef *mDev;
 
 	void (*mIsrForEvent)(error code);
 
-	void push(CanFrame *frame);
+	void push(CanFrame_t *frame);
 };
 
 #endif
